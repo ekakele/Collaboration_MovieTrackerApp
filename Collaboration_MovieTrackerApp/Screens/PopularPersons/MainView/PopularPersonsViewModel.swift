@@ -6,3 +6,31 @@
 //
 
 import Foundation
+import GenericNetworkManager
+
+class PopularPersonsViewModel: ObservableObject {
+    // MARK: - Properties
+    private var networkManager: GenericNetworkManager
+    @Published var persons: [Person] = []
+    
+    // MARK: - Init
+    init() {
+        self.networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org/")
+        fetchData()
+    }
+    
+    //MARK: - Methods
+    func fetchData() {
+        let endpointString = "3/person/popular?api_key=0f6687ab3afdd8a96e987121cf0841bb"
+        networkManager.fetchData(endpoint: endpointString) { (result: Result<PersonModel, Error>) in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self.persons = data.results
+                }
+            case .failure(let error):
+                print("Error fetching items: \(error.localizedDescription)")
+            }
+        }
+    }
+}

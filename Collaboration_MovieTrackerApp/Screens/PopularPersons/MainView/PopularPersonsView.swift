@@ -14,9 +14,15 @@ struct PopularPersonsView: View {
         ZStack {
             AppColor.background
                 .ignoresSafeArea()
-            
+            listVStackView
+        }
+    }
+    
+    private var listVStackView: some View {
+        VStack {
             setupListView
         }
+        .padding(.vertical, 5)
     }
     
     private var setupListView: some View {
@@ -26,7 +32,11 @@ struct PopularPersonsView: View {
                     image: viewModel.generateImageURL(for: person.profilePath)!,
                     title: person.name,
                     shortInfo: "Known for:  \(person.knownForDepartment)",
-                    genre: person.genderString)
+                    genre: person.genderString,
+                    imdb: "Popularity:",
+                    imdbRating: "\(person.popularity)"
+                )
+                .listRowSeparator(.hidden)
             }
             .listRowBackground(Color.clear)
         }

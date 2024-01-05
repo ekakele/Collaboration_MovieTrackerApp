@@ -11,14 +11,8 @@ import Foundation
 struct PersonModel: Decodable {
     let results: [Person]
 
-//    let page: Int
-//    let totalPages, totalResults: Int
-
     enum CodingKeys: String, CodingKey {
         case results
-//        case page
-//        case totalPages = "total_pages"
-//        case totalResults = "total_results"
     }
 }
 

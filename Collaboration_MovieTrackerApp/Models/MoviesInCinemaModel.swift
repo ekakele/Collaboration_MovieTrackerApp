@@ -7,28 +7,44 @@
 
 import Foundation
 
-struct MoviesData: Decodable {
-    let movies: [MovieResult]
+// MARK: - Result
+struct MovieResponse: Codable {
+    let dates: DateRange
+    let page: Int
+    let results: [Movie]
+    let totalPages: Int
+    let totalResults: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case dates, page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
 }
 
-// MARK: - Result
-struct MovieResult: Codable {
-    let genreIDS: [Int]
-    let id: Int
-    let overview: String
-    let popularity: Double
-    let posterPath, releaseDate, title: String
-    let imdbRating: Double
-    let voteCount: Int
+struct DateRange: Codable {
+    let maximum: String
+    let minimum: String
+}
 
-    enum CodingKeys: String, CodingKey {
-        case genreIDS = "genre_ids"
+struct Movie: Codable {
+    let genreIds: [Int]
+    let id: Int
+    let shortInfo: String
+    let popularity: Double
+    let posterPath: String?
+    let releaseDate: String
+    let title: String
+    let imdbRating: Double
+    
+    private enum CodingKeys: String, CodingKey {
+        case genreIds = "genre_ids"
         case id
-        case overview, popularity
+        case shortInfo = "overview"
+        case popularity
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case title
         case imdbRating = "vote_average"
-        case voteCount = "vote_count"
     }
 }

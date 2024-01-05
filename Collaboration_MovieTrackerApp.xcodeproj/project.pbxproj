@@ -11,6 +11,7 @@
 		B58D238A2B47FBE300C01136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D23892B47FBE300C01136 /* ContentView.swift */; };
 		B58D238C2B47FBE600C01136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58D238B2B47FBE600C01136 /* Assets.xcassets */; };
 		B58D238F2B47FBE600C01136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58D238E2B47FBE600C01136 /* Preview Assets.xcassets */; };
+		B58D23972B47FD3F00C01136 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B58D23962B47FD3F00C01136 /* GenericNetworkManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58D23972B47FD3F00C01136 /* GenericNetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = Collaboration_MovieTrackerApp;
+			packageProductDependencies = (
+				B58D23962B47FD3F00C01136 /* GenericNetworkManager */,
+			);
 			productName = Collaboration_MovieTrackerApp;
 			productReference = B58D23842B47FBE300C01136 /* Collaboration_MovieTrackerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = B58D237B2B47FBE300C01136;
+			packageReferences = (
+				B58D23952B47FD3F00C01136 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */,
+			);
 			productRefGroup = B58D23852B47FBE300C01136 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B58D23952B47FD3F00C01136 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ekakele/GenericNetworkManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B58D23962B47FD3F00C01136 /* GenericNetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B58D23952B47FD3F00C01136 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */;
+			productName = GenericNetworkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B58D237C2B47FBE300C01136 /* Project object */;
 }

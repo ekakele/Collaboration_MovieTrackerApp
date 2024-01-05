@@ -11,7 +11,7 @@ import SwiftUI
 struct Collaboration_MovieTrackerAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieTrackerTabView()
         }
     }
 }

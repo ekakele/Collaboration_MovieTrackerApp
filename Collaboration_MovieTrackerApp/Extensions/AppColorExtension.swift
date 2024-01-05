@@ -13,7 +13,7 @@ struct AppColor {
     static let lightGray = Color(hex: 0x2C2C2C)
     static let textPrimary = Color(hex: 0xE1E1E1)
     static let textSecondary = Color(hex: 0x7F7F7F)
-    static let primaryOrange = Color(hex: 0xD4E80D)
+    static let primaryGreen = Color(hex: 0xD4E80D)
 }
  
 extension Color {

@@ -16,6 +16,7 @@ struct MovieTrackerTabView: View {
             createTabItem(view: MoviesInCinemaView(), systemName: "popcorn", text: "In Cinema")
             createTabItem(view: TVSeriesOnAirView(), systemName: "appletv", text: "On Air")
         }
+        .accentColor(AppColor.primaryGreen)
     }
 }
 
@@ -25,7 +26,6 @@ private func createTabItem<T: View>(view: T, systemName: String, text: String) -
             Image(systemName: systemName)
             Text(text)
         }
-    //        .accentColor(.appGreen)
 }
 
 #Preview {

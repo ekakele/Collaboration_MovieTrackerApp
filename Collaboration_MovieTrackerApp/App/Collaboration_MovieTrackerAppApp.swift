@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct Collaboration_MovieTrackerAppApp: App {
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : AppColor.textSecondary]
+    }
+    
     var body: some Scene {
         WindowGroup {
             MovieTrackerTabView()

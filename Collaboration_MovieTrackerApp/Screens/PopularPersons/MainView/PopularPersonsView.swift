@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct PopularPersonsView: View {
+    // MARK: - Properties
     @StateObject var viewModel = PopularPersonsViewModel()
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             AppColor.background
@@ -18,6 +20,7 @@ struct PopularPersonsView: View {
         }
     }
     
+    // MARK: - Components
     private var listVStackView: some View {
         VStack {
             setupListView

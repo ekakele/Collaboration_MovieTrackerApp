@@ -29,7 +29,7 @@ struct MoviesInCinemaView: View {
                         image: viewModel.generateImageURL(for: movie.posterPath)!,
                         title: movie.title,
                         shortInfo: movie.shortInfo,
-                        genre: "Genre"
+                        genre: movie.genreIds.first?.rawValue ?? "",
                     )
                 }
             }

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct MoviesInCinemaDetailsView: View {
+    
+    //MARK: Properties
+    @StateObject private var viewModel = MoviesInCinemaDetailsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(viewModel.reviewResults.first?.author ?? "-")
     }
 }
 

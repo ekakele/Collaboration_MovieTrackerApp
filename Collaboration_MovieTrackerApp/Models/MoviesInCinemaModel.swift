@@ -94,3 +94,37 @@ enum Genre: Int, Codable {
         }
     }
 }
+
+// MARK: - AuthorResponse
+struct AuthorResponse: Codable {
+    let results: [Review]
+}
+
+// MARK: - Review
+struct Review: Codable {
+    let author: String
+    let content: String
+    let createdAt: String
+    let id: String
+    let updatedAt: String
+    let url: String
+    let authorDetails: AuthorDetails
+
+    enum CodingKeys: String, CodingKey {
+        case author
+        case content
+        case createdAt = "created_at"
+        case id
+        case updatedAt = "updated_at"
+        case url
+        case authorDetails = "author_details"
+    }
+}
+
+// MARK: - AuthorDetails
+struct AuthorDetails: Codable {
+    let name: String
+    let username: String
+    let avatarPath: String?
+    let rating: Double?
+}

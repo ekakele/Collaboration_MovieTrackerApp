@@ -25,9 +25,13 @@ struct MoviesInCinemaView: View {
             VStack(spacing: 12) {
                 
                 ForEach(viewModel.results, id: \.id) { movie in
-                    ListRowView(image: "", title: movie.title, shortInfo: movie.shortInfo, genre: "Genre")
+                    ListRowView(
+                        image: viewModel.generateImageURL(for: movie.posterPath)!,
+                        title: movie.title,
+                        shortInfo: movie.shortInfo,
+                        genre: "Genre"
+                    )
                 }
-                
             }
             .padding()
         }

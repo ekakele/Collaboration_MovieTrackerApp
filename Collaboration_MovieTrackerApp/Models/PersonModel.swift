@@ -100,8 +100,23 @@ enum OriginalLanguage: String, Decodable {
     case ta = "ta"
     case te = "te"
 }
-//
-//enum KnownForDepartment: String, Decodable {
-//    case acting = "Acting"
-//    case writing = "Writing"
-//}
+
+// MARK: - Gender Extension
+enum Gender: String {
+    case male = "Male"
+    case female = "Female"
+    case unknown = "Unknown"
+}
+
+extension Person {
+    var genderString: String {
+        switch gender {
+        case 1:
+            return Gender.female.rawValue
+        case 2:
+            return Gender.male.rawValue
+        default:
+            return Gender.unknown.rawValue
+        }
+    }
+}

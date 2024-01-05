@@ -33,4 +33,13 @@ class PopularPersonsViewModel: ObservableObject {
             }
         }
     }
+    
+    func generateImageURL(for profilePath: String?) -> String? {
+        guard let profilePath = profilePath else { return nil }
+        
+        let baseImageURL = "https://image.tmdb.org/t/p/"
+        let imageSize = "original"
+        
+        return baseImageURL + imageSize + profilePath
+    }
 }

@@ -120,7 +120,6 @@
 				B58D239B2B47FDC100C01136 /* Models */,
 				B58D239A2B47FDB000C01136 /* Screens */,
 				B58D239E2B47FE1E00C01136 /* Components */,
-				B58D239D2B47FDF900C01136 /* Helpers */,
 				B58D239C2B47FDD500C01136 /* Extensions */,
 				B58D23982B47FD8100C01136 /* Resources */,
 				B58D238D2B47FBE600C01136 /* Preview Content */,
@@ -183,13 +182,6 @@
 				B53BAA0A2B4819920082278E /* AppColorExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B58D239D2B47FDF900C01136 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B58D239E2B47FE1E00C01136 /* Components */ = {

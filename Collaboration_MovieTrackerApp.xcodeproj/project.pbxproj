@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B53BAA062B48182F0082278E /* TVSeriesOnAirDetailsView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */; };
 		B53BAA092B48188A0082278E /* PopularTVSeriesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */; };
+		B53BAA0B2B4819920082278E /* AppColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA0A2B4819920082278E /* AppColorExtension.swift */; };
 		B58D23882B47FBE300C01136 /* Collaboration_MovieTrackerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D23872B47FBE300C01136 /* Collaboration_MovieTrackerAppApp.swift */; };
 		B58D238C2B47FBE600C01136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58D238B2B47FBE600C01136 /* Assets.xcassets */; };
 		B58D238F2B47FBE600C01136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58D238E2B47FBE600C01136 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TVSeriesOnAirDetailsView .swift"; sourceTree = "<group>"; };
 		B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesDetailsView.swift; sourceTree = "<group>"; };
+		B53BAA0A2B4819920082278E /* AppColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorExtension.swift; sourceTree = "<group>"; };
 		B58D23842B47FBE300C01136 /* Collaboration_MovieTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collaboration_MovieTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58D23872B47FBE300C01136 /* Collaboration_MovieTrackerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collaboration_MovieTrackerAppApp.swift; sourceTree = "<group>"; };
 		B58D238B2B47FBE600C01136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		B58D239C2B47FDD500C01136 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B53BAA0A2B4819920082278E /* AppColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				B53BAA092B48188A0082278E /* PopularTVSeriesDetailsView.swift in Sources */,
 				B58D23882B47FBE300C01136 /* Collaboration_MovieTrackerAppApp.swift in Sources */,
 				B58D23D22B4817C200C01136 /* MoviesInCinemaDetailsView.swift in Sources */,
+				B53BAA0B2B4819920082278E /* AppColorExtension.swift in Sources */,
 				B58D23A02B47FEB600C01136 /* PopularMoviesView.swift in Sources */,
 				B58D23C62B4811CE00C01136 /* PopularMoviesDetailsView.swift in Sources */,
 				B58D23A42B47FEDF00C01136 /* PopularTVSeriesView.swift in Sources */,

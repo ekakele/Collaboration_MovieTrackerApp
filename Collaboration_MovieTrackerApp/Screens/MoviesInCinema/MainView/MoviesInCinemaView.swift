@@ -14,9 +14,7 @@ struct MoviesInCinemaView: View {
     var body: some View {
         ZStack {
             AppColor.background.ignoresSafeArea(.all)
-           
             listView
-            
         }
     }
     
@@ -30,6 +28,8 @@ struct MoviesInCinemaView: View {
                         title: movie.title,
                         shortInfo: movie.shortInfo,
                         genre: movie.genreIds.first?.rawValue ?? "",
+                        imdb: "IMDB",
+                        imdbRating: String(format: "%.1f", movie.imdbRating)
                     )
                 }
             }

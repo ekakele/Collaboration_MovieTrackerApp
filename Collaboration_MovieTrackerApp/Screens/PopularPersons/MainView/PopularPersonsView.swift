@@ -56,7 +56,7 @@ struct PopularPersonsView: View {
             setupListRowView(for: person)
         }
         .sheet(isPresented: $showDetailsPage) {
-            PopularPersonsDetailsView()
+            PopularPersonsDetailsView(personID: person.id)
                 .presentationDetents([.fraction(0.99)])
         }
     }

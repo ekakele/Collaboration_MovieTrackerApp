@@ -10,17 +10,27 @@ import SwiftUI
 struct PopularPersonsDetailsView: View {
     // MARK: - Properties
     @StateObject var viewModel = PopularPersonsDetailsViewModel()
-//    @State var name = ""
+    @State var personID: Int
+    @State var biography = ""
     
     // MARK: - Body
     var body: some View {
-        Text("Hello world!")
-//            .onAppear(perform: {
-//                viewModel.fetchData(with: viewModel.person!.id)
-//            })
+        Text(biography)
+            .onAppear(perform: {
+                biography = "Hello"
+            })
     }
+    
+//    var textView: some View {
+//        if let person = viewModel.person {
+//            Text(person.biography)
+//        } else {
+//            Text("Loading...")
+//        }
+//    }
+    
 }
 
 #Preview {
-    PopularPersonsDetailsView()
+    PopularPersonsDetailsView(personID: 1290466)
 }

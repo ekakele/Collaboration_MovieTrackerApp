@@ -63,7 +63,7 @@ struct PopularPersonsView: View {
     
     private func setupListRowView(for person: Person) -> some View {
         ListRowView(
-            image: viewModel.generateImageURL(for: person.profilePath)!,
+            image: viewModel.generateImageURL(for: person.profilePath),
             title: person.name,
             shortInfo: "Known for:  \(person.knownForDepartment)",
             genre: person.genderString,

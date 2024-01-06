@@ -33,9 +33,9 @@ struct MoviesInCinemaView: View {
                         )
                     }
                 }
-                .padding()
-            
+                .padding(.horizontal, 16)
         }
+        .padding(.vertical, 5)
     }
 }
 

@@ -21,7 +21,7 @@ struct PersonDetailsModel: Decodable {
     let placeOfBirth: String
     let popularity: Double
     let profilePath: String
-    let genderString: String
+//    let genderString: String
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -33,7 +33,7 @@ struct PersonDetailsModel: Decodable {
         case placeOfBirth = "place_of_birth"
         case popularity
         case profilePath = "profile_path"
-        case genderString
+//        case genderString
     }
 }
 

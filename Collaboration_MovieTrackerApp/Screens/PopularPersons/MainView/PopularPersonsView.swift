@@ -10,7 +10,7 @@ import SwiftUI
 struct PopularPersonsView: View {
     // MARK: - Properties
     @StateObject var viewModel = PopularPersonsViewModel()
-    @State private var showDetailsPage: Bool = false
+    @State private var showDetailsPage: [Int: Bool] = [:]
     
     // MARK: - Body
     var body: some View {
@@ -50,15 +50,17 @@ struct PopularPersonsView: View {
     }
     
     private func navigateToDetailsView(for person: Person) -> some View {
-        Button(action: {
-            showDetailsPage.toggle()
-        }) {
-            setupListRowView(for: person)
-        }
-        .sheet(isPresented: $showDetailsPage) {
-            PopularPersonsDetailsView(personID: person.id)
-                .presentationDetents([.fraction(0.99)])
-        }
+        setupListRowView(for: person)
+            .onTapGesture {
+                showDetailsPage[person.id, default: false].toggle()
+            }
+            .sheet(isPresented: Binding(
+                get: { showDetailsPage[person.id, default: false] },
+                set: { showDetailsPage[person.id] = $0 }
+            )) {
+                PopularPersonsDetailsView(personID: person.id)
+                    .presentationDetents([.fraction(0.99)])
+            }
     }
     
     private func setupListRowView(for person: Person) -> some View {

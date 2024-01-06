@@ -12,23 +12,21 @@ struct PopularPersonsDetailsView: View {
     @StateObject var viewModel = PopularPersonsDetailsViewModel()
     @State var personID: Int
     @State var biography = ""
+    @State var name = ""
     
     // MARK: - Body
     var body: some View {
-        Text(biography)
-            .onAppear(perform: {
-                biography = "Hello"
-            })
+        if let person = viewModel.person {
+            Text(person.name)
+
+            Text(person.biography)
+        } else {
+            Text("Loading...")
+                .onAppear {
+                    viewModel.fetchData(with: personID)
+                }
+        }
     }
-    
-//    var textView: some View {
-//        if let person = viewModel.person {
-//            Text(person.biography)
-//        } else {
-//            Text("Loading...")
-//        }
-//    }
-    
 }
 
 #Preview {

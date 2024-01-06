@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MovieTrackerTabView: View {
+    
+    //MARK: Body
     var body: some View {
         TabView {
             createTabItem(view: PopularMoviesView(), systemName: "movieclapper", text: "Movies")
@@ -18,14 +20,15 @@ struct MovieTrackerTabView: View {
         }
         .accentColor(AppColor.primaryGreen)
     }
-}
-
-private func createTabItem<T: View>(view: T, systemName: String, text: String) -> some View {
-    view
-        .tabItem {
-            Image(systemName: systemName)
-            Text(text)
-        }
+    
+    //MARK: Components
+    private func createTabItem<T: View>(view: T, systemName: String, text: String) -> some View {
+        view
+            .tabItem {
+                Image(systemName: systemName)
+                Text(text)
+            }
+    }
 }
 
 #Preview {

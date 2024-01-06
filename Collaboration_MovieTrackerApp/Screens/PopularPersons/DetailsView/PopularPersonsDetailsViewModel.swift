@@ -25,11 +25,12 @@ class PopularPersonsDetailsViewModel: ObservableObject {
         networkManager.fetchData(endpoint: endpointString) { (result: Result<PersonDetailsModel, Error>) in
             switch result {
             case .success(let data):
+                print(data)
                 DispatchQueue.main.async {
                     self.person = data.self
                 }
             case .failure(let error):
-                print("Error fetching items: \(error.localizedDescription)")
+                print("Error fetching items: \(error)")
             }
         }
     }

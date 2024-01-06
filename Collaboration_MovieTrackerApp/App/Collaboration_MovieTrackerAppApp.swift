@@ -10,10 +10,13 @@ import SwiftUI
 @main
 struct Collaboration_MovieTrackerAppApp: App {
     
+    //MARK: Init
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : AppColor.textSecondary]
+        UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
     }
     
+    //MARK: Body
     var body: some Scene {
         WindowGroup {
             MovieTrackerTabView()

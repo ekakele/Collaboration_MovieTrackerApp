@@ -37,6 +37,7 @@ struct PersonDetailsModel: Decodable {
     }
 }
 
+// MARK: - Gender Enum
 enum GenderInfo: Int, CaseIterable {
     case notSet = 0
     case female = 1

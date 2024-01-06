@@ -32,6 +32,7 @@ struct PopularMoviesView: View {
             }
             .listRowBackground(Color.clear)
         }
+        .padding(.vertical, 5)
         .listStyle(PlainListStyle())
     }
 }

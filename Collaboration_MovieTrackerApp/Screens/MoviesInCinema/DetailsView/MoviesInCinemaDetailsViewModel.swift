@@ -12,17 +12,16 @@ final class MoviesInCinemaDetailsViewModel: ObservableObject {
     
     //MARK: Properties
     @Published var reviewResults: [Review] = []
-    
     private var networkManager: GenericNetworkManager
     
     init() {
         self.networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org/")
-        fetchReviews()
     }
     
     //MARK: Fetch
-    func fetchReviews() {
-        let endpointString = "3/movie/550/reviews?api_key=07f64a8ccb5e3a20cc73fa3633167639"
+    func fetchReviews(movieID: Int) {
+        
+        let endpointString = "3/movie/\(movieID)/reviews?api_key=07f64a8ccb5e3a20cc73fa3633167639"
         
         networkManager.fetchData(endpoint: endpointString) { (result: Result<AuthorResponse, Error>) in
             switch result {

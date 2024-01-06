@@ -10,7 +10,7 @@ import GenericNetworkManager
 
 final class MoviesInCinemaViewModel: ObservableObject {
     
-    //MARK: Properties
+    //MARK: - Properties
     @Published var results: [Movie] = []
     private var networkManager: GenericNetworkManager
     
@@ -19,9 +19,9 @@ final class MoviesInCinemaViewModel: ObservableObject {
         fetchMovies()
     }
     
-    //MARK: Fetch
+    //MARK: - Fetch
     func fetchMovies() {
-        let endpointString = "3/movie/now_playing?api_key=07f64a8ccb5e3a20cc73fa3633167639"
+        let endpointString = "3/movie/now_playing?api_key=07f64a8ccb5e3a20cc73fa3633167639&page=2"
         
         networkManager.fetchData(endpoint: endpointString) { (result: Result<MovieResponse, Error>) in
             switch result {
@@ -31,17 +31,18 @@ final class MoviesInCinemaViewModel: ObservableObject {
                 }
             case.failure(let error):
                 print("Error fetching items: \(error.localizedDescription)")
-
+                
             }
         }
     }
     
-    func generateImageURL(for profilePath: String?) -> String? {
-            guard let profilePath = profilePath else { return nil }
-            
-            let baseImageURL = "https://image.tmdb.org/t/p/"
-            let imageSize = "original"
-            
-            return baseImageURL + imageSize + profilePath
-        }
+    //MARK: - Generate image URL
+    func generateImageURL(for profilePath: String?) -> String {
+        guard let profilePath = profilePath else { return "" }
+        
+        let baseImageURL = "https://image.tmdb.org/t/p/"
+        let imageSize = "original"
+        
+        return baseImageURL + imageSize + profilePath
+    }
 }

@@ -23,44 +23,54 @@ struct PopularPersonsView: View {
     
     // MARK: - Components
     private var listVStackView: some View {
-        VStack {
+        VStack(spacing: 8) {
+            listTitleView
             setupListView
         }
         .padding(.vertical, 5)
     }
     
-    private var detailsPageNavigatorView: some View {
-        VStack {
-            setupListView
-        }
-        .padding(.vertical, 5)
+    private var listTitleView: some View {
+        Text("Popular Persons")
+            .font(.title)
+            .bold()
+            .foregroundStyle(AppColor.textPrimary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
     }
-    
     
     private var setupListView: some View {
         List() {
             ForEach(viewModel.persons, id: \.id) { person in
-                Button(action: {
-                    showDetailsPage.toggle()
-                }, label: {
-                    ListRowView(
-                        image: viewModel.generateImageURL(for: person.profilePath)!,
-                        title: person.name,
-                        shortInfo: "Known for:  \(person.knownForDepartment)",
-                        genre: person.genderString,
-                        imdb: "Popularity:",
-                        imdbRating: "\(person.popularity)"
-                    )
-                    .listRowSeparator(.hidden)
-                })
-                .sheet(isPresented: $showDetailsPage) {
-                    PopularPersonsDetailsView()
-                        .presentationDetents([.fraction(0.99)])
-                }
+                navigateToDetailsView(for: person)
             }
             .listRowBackground(Color.clear)
         }
         .listStyle(PlainListStyle())
+    }
+    
+    private func navigateToDetailsView(for person: Person) -> some View {
+        Button(action: {
+            showDetailsPage.toggle()
+        }) {
+            setupListRowView(for: person)
+        }
+        .sheet(isPresented: $showDetailsPage) {
+            PopularPersonsDetailsView()
+                .presentationDetents([.fraction(0.99)])
+        }
+    }
+    
+    private func setupListRowView(for person: Person) -> some View {
+        ListRowView(
+            image: viewModel.generateImageURL(for: person.profilePath)!,
+            title: person.name,
+            shortInfo: "Known for:  \(person.knownForDepartment)",
+            genre: person.genderString,
+            imdb: "Popularity:",
+            imdbRating: "\(person.popularity)"
+        )
+        .listRowSeparator(.hidden)
     }
 }
 

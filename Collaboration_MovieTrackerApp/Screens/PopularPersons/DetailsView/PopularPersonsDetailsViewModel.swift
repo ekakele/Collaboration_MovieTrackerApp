@@ -16,7 +16,7 @@ class PopularPersonsDetailsViewModel: ObservableObject {
     // MARK: - Init
     init() {
         self.networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org/")
-//        fetchData(with: <#Int#>)
+        //        fetchData(with: <#Int#>)
     }
     
     //MARK: - Methods
@@ -35,12 +35,12 @@ class PopularPersonsDetailsViewModel: ObservableObject {
         }
     }
     
-//    func generateImageURL(for profilePath: String?) -> String? {
-//        guard let profilePath = profilePath else { return nil }
-//        
-//        let baseImageURL = "https://image.tmdb.org/t/p/"
-//        let imageSize = "original"
-//        
-//        return baseImageURL + imageSize + profilePath
-//    }
+    //    func generateImageURL(for profilePath: String?) -> String? {
+    //     guard let profilePath = profilePath else { return "" }
+    //
+    //        let baseImageURL = "https://image.tmdb.org/t/p/"
+    //        let imageSize = "original"
+    //
+    //        return baseImageURL + imageSize + profilePath
+    //    }
 }

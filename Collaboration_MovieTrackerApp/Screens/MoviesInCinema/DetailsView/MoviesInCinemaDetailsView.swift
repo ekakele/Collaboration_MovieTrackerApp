@@ -17,28 +17,13 @@ struct MoviesInCinemaDetailsView: View {
         ZStack {
             AppColor.background.ignoresSafeArea(.all)
             VStack(alignment: .leading) {
-                headerTiTleView
+                MainTitleView(title: "Movie review")
                 listView
                 
             }
             .padding(.top, 12)
             .foregroundColor(AppColor.textPrimary)
         }
-    }
-    
-    private var headerTiTleView: some View {
-        HStack(spacing: 8) {
-            Rectangle()
-                .frame(width: 4, height: 32)
-                .foregroundColor(AppColor.lightGray)
-                .cornerRadius(2)
-            
-            Text("Movie review")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(AppColor.textPrimary)
-        }
-        .padding(.horizontal, 16)
     }
     
     //MARK: - listView

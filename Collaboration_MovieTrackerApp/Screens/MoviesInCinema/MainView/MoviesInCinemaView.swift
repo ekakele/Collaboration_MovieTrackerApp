@@ -25,8 +25,8 @@ struct MoviesInCinemaView: View {
     private var listView: some View {
         
         VStack(alignment: .leading) {
-            
-            MainTitleView()
+        
+            MainTitleView(title: "Movies in cinema")
             
             ScrollView {
                 VStack(spacing: 12) {
@@ -49,7 +49,7 @@ struct MoviesInCinemaView: View {
                             set: { showDetailsPage[movie.id] = $0 }
                         )) {
                             MoviesInCinemaDetailsView(movieID: movie.id)
-                                .presentationDetents([.fraction(0.98)])
+                                .presentationDetents([.fraction(0.99)])
                         }
                         
                     }

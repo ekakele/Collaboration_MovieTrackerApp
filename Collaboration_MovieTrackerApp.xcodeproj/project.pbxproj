@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2ED0EE7B2B4AB48B00780378 /* MainTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0EE7A2B4AB48B00780378 /* MainTitleView.swift */; };
+		2ED0EE7D2B4AB73400780378 /* ReviewRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0EE7C2B4AB73400780378 /* ReviewRowView.swift */; };
 		393FDE5A2B4AA22F00EF2109 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FDE592B4AA22F00EF2109 /* DetailsView.swift */; };
 		B53BAA062B48182F0082278E /* TVSeriesOnAirDetailsView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */; };
 		B53BAA092B48188A0082278E /* PopularTVSeriesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2ED0EE7A2B4AB48B00780378 /* MainTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleView.swift; sourceTree = "<group>"; };
+		2ED0EE7C2B4AB73400780378 /* ReviewRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowView.swift; sourceTree = "<group>"; };
 		393FDE592B4AA22F00EF2109 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TVSeriesOnAirDetailsView .swift"; sourceTree = "<group>"; };
 		B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesDetailsView.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			children = (
 				B58D23D12B4817C100C01136 /* MoviesInCinemaDetailsView.swift */,
 				B53BAA122B481BB40082278E /* MoviesInCinemaDetailsViewModel.swift */,
+				2ED0EE7C2B4AB73400780378 /* ReviewRowView.swift */,
 			);
 			path = DetailsView;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				B58D23C42B4801C300C01136 /* MovieTrackerTabView.swift in Sources */,
 				B58D23BB2B48005F00C01136 /* PersonModel.swift in Sources */,
 				B58D23BF2B48007B00C01136 /* MoviesInCinemaModel.swift in Sources */,
+				2ED0EE7D2B4AB73400780378 /* ReviewRowView.swift in Sources */,
 				B58D23AA2B47FFAA00C01136 /* PopularMoviesViewModel.swift in Sources */,
 				B58D23CF2B4813BD00C01136 /* PopularPersonsDetailsView.swift in Sources */,
 				B53BAA092B48188A0082278E /* PopularTVSeriesDetailsView.swift in Sources */,

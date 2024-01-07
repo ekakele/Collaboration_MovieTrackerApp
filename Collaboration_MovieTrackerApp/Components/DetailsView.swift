@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailsView: View {
-    //MARK: Properties
+    //MARK: - Properties
     var image: String
     var title: String
     var genre: String
@@ -17,18 +17,25 @@ struct DetailsView: View {
     var shortInfo: String
     var language: String
     var originCountry: String
+    var buttonTitle: String
+    var languageTitle: String = ""
     
-    //MARK: Body
+    //MARK: - Body
     var body: some View {
-        VStack(spacing: 0) {
-            itemImageView
-            fullInfoStackView
-                .padding()
-            Spacer()
+        ZStack {
+            AppColor.background
+                .ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                itemImageView
+                fullInfoStackView
+                    .padding()
+                Spacer()
+            }
         }
     }
     
-    //MARK: Components
+    //MARK: - Components
     private var fullInfoStackView: some View {
         VStack(alignment: .leading, spacing: 16) {
             titleLabel
@@ -53,27 +60,23 @@ struct DetailsView: View {
             content: { fetchedImage in
                 fetchedImage
                     .resizable()
-                    .cornerRadius(6)
                     .frame(maxWidth: .infinity)
                     .frame(height: 320)
                     .scaledToFit()
-                
             }, placeholder: {
-                Image("testImage")
+                Image("defaultImage")
                     .resizable()
-                    .cornerRadius(6)
                     .frame(maxWidth: .infinity)
                     .frame(height: 320)
                     .scaledToFit()
             })
-        
     }
     
     private var ButtonView: some View {
         Button(action: {
             
         }) {
-            Text("Watch")
+            Text(buttonTitle)
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(AppColor.primaryGreen)
@@ -122,10 +125,10 @@ struct DetailsView: View {
     
     private var extraInfoView: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("original language: \(language)")
+            Text("\(languageTitle): \(language)")
                 .font(.subheadline)
                 .foregroundColor(AppColor.textSecondary)
-            Text("release country: \(originCountry)")
+            Text("Country: \(originCountry)")
                 .font(.subheadline)
                 .foregroundColor(AppColor.textSecondary)
         }
@@ -140,5 +143,5 @@ struct DetailsView: View {
  
 
 #Preview {
-    DetailsView(image: "", title: "lorem is is si", genre: "action", imdb: "4.5", imdbRating: "2.2", shortInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", language: "English", originCountry: "USA")
+    DetailsView(image: "", title: "lorem is is si", genre: "action", imdb: "IMDB", imdbRating: "2.2", shortInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", language: "English", originCountry: "USA", buttonTitle: "Watch")
 }

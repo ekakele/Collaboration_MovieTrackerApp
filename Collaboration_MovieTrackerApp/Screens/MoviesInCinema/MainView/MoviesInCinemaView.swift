@@ -23,12 +23,12 @@ struct MoviesInCinemaView: View {
     }
     
     private var listView: some View {
-
-            VStack(alignment: .leading) {
-                
-//                headerTitleView
-                ScrollView {
-                
+        
+        VStack(alignment: .leading) {
+            
+            MainTitleView()
+            
+            ScrollView {
                 VStack(spacing: 12) {
                     ForEach(viewModel.results, id: \.id) { movie in
                         

@@ -8,7 +8,7 @@
 import Foundation
 import GenericNetworkManager
 
-class PopularMoviesDetailsViewModel: ObservableObject {
+final class PopularMoviesDetailsViewModel: ObservableObject {
     //MARK: - Properties
     private var networkManager: GenericNetworkManager
     @Published var moviesDetails: MoviesDetails?

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393FDE5A2B4AA22F00EF2109 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FDE592B4AA22F00EF2109 /* DetailsView.swift */; };
 		B53BAA062B48182F0082278E /* TVSeriesOnAirDetailsView .swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */; };
 		B53BAA092B48188A0082278E /* PopularTVSeriesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */; };
 		B53BAA0B2B4819920082278E /* AppColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53BAA0A2B4819920082278E /* AppColorExtension.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393FDE592B4AA22F00EF2109 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		B53BAA052B48182F0082278E /* TVSeriesOnAirDetailsView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TVSeriesOnAirDetailsView .swift"; sourceTree = "<group>"; };
 		B53BAA082B48188A0082278E /* PopularTVSeriesDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesDetailsView.swift; sourceTree = "<group>"; };
 		B53BAA0A2B4819920082278E /* AppColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorExtension.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				B53BAA162B4828E30082278E /* ListRowView.swift */,
+				393FDE592B4AA22F00EF2109 /* DetailsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58D23A82B47FEFE00C01136 /* TVSeriesOnAirView .swift in Sources */,
+				393FDE5A2B4AA22F00EF2109 /* DetailsView.swift in Sources */,
 				B53BAA1D2B49622D0082278E /* TVSeriesDetailsModel.swift in Sources */,
 				B58D23AC2B47FFB600C01136 /* PopularPersonsViewModel.swift in Sources */,
 				B58D23C12B48009000C01136 /* TVSeriesOnAirModel.swift in Sources */,

@@ -8,8 +8,57 @@
 import SwiftUI
 
 struct PopularMoviesView: View {
+    //MARK: - Properties
+    @StateObject var viewModel = PopularMoviesViewModel()
+    @State private var isShowingDetails = false
+    @State private var selectedMovie: Movie?
+    
+    //MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            AppColor.background
+                .ignoresSafeArea()
+            VStack(alignment: .leading){
+                MainTitleView(title: "Popular Movies")
+                listView
+            }
+        }
+        .sheet(isPresented: $isShowingDetails) {
+            if let movie = selectedMovie {
+                PopularMoviesDetailsView(movie: movie)
+            }
+        }
+    }
+    
+    //MARK: - Components
+    private var listView: some View {
+        List {
+            ForEach(viewModel.movies, id: \.id) { movie in
+                ListRowView(image: viewModel.generateImageURL(for: movie.image),
+                            title: movie.title,
+                            shortInfo: movie.shortInfo,
+                            genre: movie.genre.first?.rawValue ?? "",
+                            imdb: "IMDB",
+                            imdbRating: String(format: "%.2f", movie.imdbRating)
+                )
+                .onTapGesture {
+                    selectedMovie = movie
+                    isShowingDetails = true
+                }
+            }
+            .listRowBackground(Color.clear)
+        }
+        .padding(.vertical, 5)
+        .listStyle(PlainListStyle())
+    }
+    
+    private var listTitleView: some View {
+        Text("Popular Persons")
+            .font(.title)
+            .bold()
+            .foregroundStyle(AppColor.textPrimary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
     }
 }
 

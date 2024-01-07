@@ -19,36 +19,27 @@ struct PopularPersonsDetailsView: View {
     // MARK: - Body
     var body: some View {
         if let person = viewModel.person {
-            Text(person.name)
-            
-            let image = viewModel.generateImageURL(for: viewModel.generateImageURL(for: person.profilePath))
-                                                   
-            let imageURL = URL(string: image)
-            
-            AsyncImage(
-                url: imageURL,
-                content: { fetchedImage in
-                    fetchedImage
-                        .resizable()
-                        .cornerRadius(6)
-                        .frame(width: 100, height: 140)
-                        .scaledToFit()
-                    
-                }, placeholder: {
-                    Image("defaultImage")
-                        .resizable()
-                        .cornerRadius(6)
-                        .frame(width: 100, height: 140)
-                        .scaledToFit()
-                })
-
-            Text(person.biography)
+            setupDetailsView(for: person)
         } else {
             Text("Loading...")
                 .onAppear {
                     viewModel.fetchData(with: personID)
                 }
         }
+    }
+    
+    private func setupDetailsView(for person: PersonDetailsModel) -> some View {
+        DetailsView(
+            image: viewModel.generateImageURL(for: person.profilePath),
+            title: person.name,
+            genre: person.knownForDepartment,
+            imdb: "Birthday",
+            imdbRating: person.birthday,
+            shortInfo: person.biography,
+            language: "",
+            originCountry: person.placeOfBirth
+        )
+        .listRowSeparator(.hidden)
     }
 }
 

@@ -11,7 +11,7 @@ import Foundation
 struct MovieResponse: Decodable {
     let dates: DateRange
     let page: Int
-    let results: [Movie]
+    let results: [MovieInCinema]
     let totalPages: Int
     let totalResults: Int
     
@@ -27,8 +27,8 @@ struct DateRange: Decodable {
     let minimum: String
 }
 
-struct Movie: Decodable {
-    let genreIds: [Genre]
+struct MovieInCinema: Decodable {
+    let genreIds: [GenreInCinema]
     let id: Int
     let shortInfo: String
     let popularity: Double
@@ -49,8 +49,8 @@ struct Movie: Decodable {
     }
 }
 
-// MARK: - Genre
-enum Genre: Int, Decodable {
+// MARK: - GenreInCinema
+enum GenreInCinema: Int, Decodable {
     case action = 28
     case adventure = 12
     case animation = 16

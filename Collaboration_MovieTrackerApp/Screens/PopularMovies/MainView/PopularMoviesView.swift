@@ -18,7 +18,7 @@ struct PopularMoviesView: View {
             AppColor.background
                 .ignoresSafeArea()
             VStack(alignment: .leading){
-                MainTitleView()
+                MainTitleView(title: "Popular Movies")
                 listView
             }
         }

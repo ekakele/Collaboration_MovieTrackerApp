@@ -23,35 +23,39 @@ struct MoviesInCinemaView: View {
     }
     
     private var listView: some View {
-        ScrollView {
-            VStack(spacing: 12) {
-                ForEach(viewModel.results, id: \.id) { movie in
-                    
-                    Button(action: {
-                        print("movie id - \(movie.id)")
-                        print("movie title - \(movie.title)")
-                        showDetailsPage[movie.id, default: false].toggle()
-                    }, label: {
-                        ListRowView(
-                            image: viewModel.generateImageURL(for: movie.posterPath),
-                            title: movie.title,
-                            shortInfo: movie.shortInfo,
-                            genre: movie.genreIds.first?.rawValue ?? "",
-                            imdb: "IMDB",
-                            imdbRating: String(format: "%.1f", movie.imdbRating)
-                        )
-                    })
-                    .sheet(isPresented: Binding(
-                        get: { showDetailsPage[movie.id, default: false] },
-                        set: { showDetailsPage[movie.id] = $0 }
-                    )) {
-                        MoviesInCinemaDetailsView(movieID: movie.id)
-                            .presentationDetents([.fraction(0.98)])
+
+            VStack(alignment: .leading) {
+                
+//                headerTitleView
+                ScrollView {
+                
+                VStack(spacing: 12) {
+                    ForEach(viewModel.results, id: \.id) { movie in
+                        
+                        Button(action: {
+                            showDetailsPage[movie.id, default: false].toggle()
+                        }, label: {
+                            ListRowView(
+                                image: viewModel.generateImageURL(for: movie.posterPath),
+                                title: movie.title,
+                                shortInfo: movie.shortInfo,
+                                genre: movie.genreIds.first?.rawValue ?? "",
+                                imdb: "IMDB",
+                                imdbRating: String(format: "%.1f", movie.imdbRating)
+                            )
+                        })
+                        .sheet(isPresented: Binding(
+                            get: { showDetailsPage[movie.id, default: false] },
+                            set: { showDetailsPage[movie.id] = $0 }
+                        )) {
+                            MoviesInCinemaDetailsView(movieID: movie.id)
+                                .presentationDetents([.fraction(0.98)])
+                        }
+                        
                     }
-                    
                 }
+                .padding(.horizontal, 16)
             }
-            .padding(.horizontal, 16)
         }
         .padding(.vertical, 5)
     }
@@ -60,3 +64,4 @@ struct MoviesInCinemaView: View {
 #Preview {
     MoviesInCinemaView()
 }
+

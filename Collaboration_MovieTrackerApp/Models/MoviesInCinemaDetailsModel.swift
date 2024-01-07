@@ -31,6 +31,9 @@ struct Review: Codable {
         case url
         case authorDetails = "author_details"
     }
+    
+
+    
 }
 
 // MARK: - AuthorDetails

@@ -12,6 +12,7 @@ final class MoviesInCinemaDetailsViewModel: ObservableObject {
     
     //MARK: Properties
     @Published var reviewResults: [Review] = []
+    
     private var networkManager: GenericNetworkManager
     
     init() {

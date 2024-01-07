@@ -23,8 +23,8 @@ struct PopularPersonsView: View {
     
     // MARK: - Components
     private var listVStackView: some View {
-        VStack(spacing: 8) {
-            MainTitleView()
+        VStack(alignment: .leading, spacing: 8) {
+            MainTitleView(title: "Popular Persons")
             setupListView
         }
         .padding(.vertical, 5)

@@ -17,8 +17,10 @@ struct PopularMoviesView: View {
         ZStack {
             AppColor.background
                 .ignoresSafeArea()
-            
-            listView
+            VStack(alignment: .leading){
+                MainTitleView()
+                listView
+            }
         }
         .sheet(isPresented: $isShowingDetails) {
             if let movie = selectedMovie {
@@ -29,7 +31,6 @@ struct PopularMoviesView: View {
     
     private var listView: some View {
         List {
-//            listTitleView
             ForEach(viewModel.movies, id: \.id) { movie in
                 ListRowView(image: viewModel.generateImageURL(for: movie.image),
                             title: movie.title,

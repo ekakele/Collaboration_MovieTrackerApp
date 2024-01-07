@@ -17,8 +17,6 @@ struct PopularMoviesDetailsView: View {
     
     var body: some View {
         ZStack() {
-            AppColor.background
-                .ignoresSafeArea()
             VStack {
                 DetailsView(
                     image: viewModel.generateImageURL(for: viewModel.moviesDetails?.posterPath),
@@ -28,7 +26,7 @@ struct PopularMoviesDetailsView: View {
                     imdbRating: String(format: "%.1f", viewModel.moviesDetails?.voteAverage ?? 0.0),
                             shortInfo: viewModel.moviesDetails?.overview ?? "",
                     language: viewModel.moviesDetails?.originalLanguage ?? "",
-                    originCountry: viewModel.moviesDetails?.productionCountries.first?.name ?? "")
+                    originCountry: viewModel.moviesDetails?.productionCountries.first?.name ?? "", buttonTitle: "Watch")
             }
             .onAppear(perform: {
                 viewModel.fetchData()

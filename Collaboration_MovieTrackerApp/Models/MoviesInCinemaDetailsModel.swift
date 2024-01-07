@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - AuthorResponse
-struct AuthorResponse: Codable {
+struct AuthorResponse: Decodable {
     let results: [Review]
 }
 
 // MARK: - Review
-struct Review: Codable {
+struct Review: Decodable {
     let author: String
     let content: String
     let createdAt: String
@@ -37,7 +37,7 @@ struct Review: Codable {
 }
 
 // MARK: - AuthorDetails
-struct AuthorDetails: Codable {
+struct AuthorDetails: Decodable {
     let name: String
     let username: String
     let avatarPath: String?

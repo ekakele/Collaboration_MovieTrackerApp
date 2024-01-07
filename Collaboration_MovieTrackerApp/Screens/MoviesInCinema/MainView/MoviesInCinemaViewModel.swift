@@ -9,7 +9,6 @@ import Foundation
 import GenericNetworkManager
 
 final class MoviesInCinemaViewModel: ObservableObject {
-    
     //MARK: - Properties
     @Published var results: [Movie] = []
     private var networkManager: GenericNetworkManager
@@ -19,7 +18,7 @@ final class MoviesInCinemaViewModel: ObservableObject {
         fetchMovies()
     }
     
-    //MARK: - Fetch
+    //MARK: - Methods
     func fetchMovies() {
         let endpointString = "3/movie/now_playing?api_key=07f64a8ccb5e3a20cc73fa3633167639&page=2"
         
@@ -35,7 +34,6 @@ final class MoviesInCinemaViewModel: ObservableObject {
         }
     }
     
-    //MARK: - Generate image URL
     func generateImageURL(for profilePath: String?) -> String {
         guard let profilePath = profilePath else { return "" }
         

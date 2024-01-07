@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - MovieResponse
-struct MovieResponse: Codable {
+struct MovieResponse: Decodable {
     let dates: DateRange
     let page: Int
     let results: [Movie]
@@ -22,12 +22,12 @@ struct MovieResponse: Codable {
     }
 }
 // MARK: - DateRange
-struct DateRange: Codable {
+struct DateRange: Decodable {
     let maximum: String
     let minimum: String
 }
 
-struct Movie: Codable {
+struct Movie: Decodable {
     let genreIds: [Genre]
     let id: Int
     let shortInfo: String
@@ -50,7 +50,7 @@ struct Movie: Codable {
 }
 
 // MARK: - Genre
-enum Genre: Int, Codable {
+enum Genre: Int, Decodable {
     case action = 28
     case adventure = 12
     case animation = 16

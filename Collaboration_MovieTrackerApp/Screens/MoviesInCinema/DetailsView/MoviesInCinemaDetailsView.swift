@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MoviesInCinemaDetailsView: View {
-    
     //MARK: - Properties
     @StateObject var viewModel = MoviesInCinemaDetailsViewModel()
     @State var movieID: Int
     
+    //MARK: - Body
     var body: some View {
         ZStack {
             AppColor.background.ignoresSafeArea(.all)
@@ -26,7 +26,7 @@ struct MoviesInCinemaDetailsView: View {
         }
     }
     
-    //MARK: - listView
+    //MARK: - Components
     private var listView: some View {
         ScrollView {
             ForEach(viewModel.reviewResults, id: \.id) { result in

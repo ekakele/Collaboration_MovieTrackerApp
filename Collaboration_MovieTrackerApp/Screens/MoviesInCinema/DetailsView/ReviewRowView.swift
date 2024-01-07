@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ReviewRowView: View {
-    
     //MARK: - Properties
     var authorName: String
     var review: String
     var createdDate: String
     var authorRating: Int
     
+    //MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
@@ -28,6 +28,7 @@ struct ReviewRowView: View {
         .cornerRadius(6)
     }
     
+    //MARK: - Components
     private var titleLabelView: some View {
         Text(authorName)
             .foregroundColor(AppColor.textSecondary)

@@ -20,26 +20,21 @@ struct PopularMoviesDetailsView: View {
             AppColor.background
                 .ignoresSafeArea()
             VStack {
-//                DetailsView(
-//                    image: viewModel.generateImageURL(for: viewModel.moviesDetails?.posterPath),
-//                            title: viewModel.moviesDetails?.title ?? "",
-//                            genre: viewModel.moviesDetails?.genres.first?.name ?? "",
-//                            imdb: "IMDB",
-//                    imdbRating: String(format: "%.1f", viewModel.moviesDetails?.voteAverage ?? 0.0),
-//                            shortInfo: viewModel.moviesDetails?.overview ?? "",
-//                            language: viewModel.moviesDetails?.originalLanguage ?? "",
-//                            originCountry: "")
-                
-                
+                DetailsView(
+                    image: viewModel.generateImageURL(for: viewModel.moviesDetails?.posterPath),
+                            title: viewModel.moviesDetails?.title ?? "",
+                            genre: viewModel.moviesDetails?.genres.first?.name ?? "",
+                            imdb: "IMDB",
+                    imdbRating: String(format: "%.1f", viewModel.moviesDetails?.voteAverage ?? 0.0),
+                            shortInfo: viewModel.moviesDetails?.overview ?? "",
+                    language: viewModel.moviesDetails?.originalLanguage ?? "",
+                    originCountry: viewModel.moviesDetails?.productionCountries.first?.name ?? "")
             }
             .onAppear(perform: {
                 viewModel.fetchData()
             })
-        
         }
     }
-    
-    
 }
  
 

@@ -64,7 +64,7 @@ struct DetailsView: View {
                     .frame(height: 320)
                     .scaledToFit()
             }, placeholder: {
-                Image("testImage")
+                Image("defaultImage")
                     .resizable()
                     .frame(maxWidth: .infinity)
                     .frame(height: 320)

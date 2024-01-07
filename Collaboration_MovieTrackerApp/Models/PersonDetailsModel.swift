@@ -33,27 +33,5 @@ struct PersonDetailsModel: Decodable {
         case placeOfBirth = "place_of_birth"
         case popularity
         case profilePath = "profile_path"
-//        case genderString
-    }
-}
-
-// MARK: - Gender Enum
-enum GenderInfo: Int, CaseIterable {
-    case notSet = 0
-    case female = 1
-    case male = 2
-    case nonBinary = 3
-
-    var genderString: String {
-        switch self {
-        case .notSet:
-            return "Not specified"
-        case .female:
-            return "Female"
-        case .male:
-            return "Male"
-        case .nonBinary:
-            return "Non-binary"
-        }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final struct PopularPersonsDetailsView: View {
+struct PopularPersonsDetailsView: View {
     // MARK: - Properties
     @StateObject var viewModel = PopularPersonsDetailsViewModel()
     @State var personID: Int

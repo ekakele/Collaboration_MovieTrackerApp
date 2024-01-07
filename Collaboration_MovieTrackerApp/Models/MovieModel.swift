@@ -12,7 +12,7 @@ struct Movie: Decodable {
     let image:  String
     let title: String
     var shortInfo: String
-    var genre: [Genre]
+    var genre: [PopularMoviesGenre]
     var imdbRating: Double
     
     enum CodingKeys: String, CodingKey {
@@ -25,11 +25,11 @@ struct Movie: Decodable {
     }
 }
 
-struct Response: Decodable {
+struct PopularMoviesResponse: Decodable {
   let results: [Movie]
 }
 
-enum Genre: Int, Codable {
+enum PopularMoviesGenre: Int, Codable {
     case action = 28
     case adventure = 12
     case animation = 16

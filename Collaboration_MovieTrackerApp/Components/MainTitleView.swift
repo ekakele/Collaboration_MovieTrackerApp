@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTitleView: View {
+    //MARK: - Properties
+    var title: String
     
     //MARK: - Body
     var body: some View {
@@ -17,7 +19,7 @@ struct MainTitleView: View {
                 .foregroundColor(AppColor.primaryGreen)
                 .cornerRadius(2)
             
-            Text("Movies in Cinema")
+            Text(title)
                 .font(.title)
                 .bold()
                 .foregroundStyle(AppColor.textPrimary)
@@ -27,5 +29,5 @@ struct MainTitleView: View {
 }
 
 #Preview {
-    MainTitleView()
+    MainTitleView(title: "Movies in Cinema")
 }

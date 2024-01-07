@@ -15,7 +15,6 @@ struct PopularPersonsDetailsView: View {
     @State var name = ""
     @State var image = ""
     
-    
     // MARK: - Body
     var body: some View {
         if let person = viewModel.person {
@@ -28,16 +27,19 @@ struct PopularPersonsDetailsView: View {
         }
     }
     
+    // MARK: - Components
     private func setupDetailsView(for person: PersonDetailsModel) -> some View {
         DetailsView(
             image: viewModel.generateImageURL(for: person.profilePath),
             title: person.name,
             genre: person.knownForDepartment,
-            imdb: "Birthday",
-            imdbRating: person.birthday,
+            imdb: "",
+            imdbRating: "",
             shortInfo: person.biography,
-            language: "",
-            originCountry: person.placeOfBirth
+            language: person.birthday,
+            originCountry: person.placeOfBirth,
+            buttonTitle: "Add to Favorites",
+            languageTitle: "Birthday"
         )
         .listRowSeparator(.hidden)
     }

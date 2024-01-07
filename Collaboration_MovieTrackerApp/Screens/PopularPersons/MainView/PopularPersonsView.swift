@@ -24,19 +24,10 @@ struct PopularPersonsView: View {
     // MARK: - Components
     private var listVStackView: some View {
         VStack(spacing: 8) {
-            listTitleView
+            MainTitleView()
             setupListView
         }
         .padding(.vertical, 5)
-    }
-    
-    private var listTitleView: some View {
-        Text("Popular Persons")
-            .font(.title)
-            .bold()
-            .foregroundStyle(AppColor.textPrimary)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 20)
     }
     
     private var setupListView: some View {

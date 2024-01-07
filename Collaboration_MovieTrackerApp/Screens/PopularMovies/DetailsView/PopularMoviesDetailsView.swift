@@ -36,7 +36,10 @@ struct PopularMoviesDetailsView: View {
                 imdbRating: String(format: "%.1f", viewModel.moviesDetails?.voteAverage ?? 0.0),
                 shortInfo: viewModel.moviesDetails?.overview ?? "",
                 language: viewModel.moviesDetails?.originalLanguage ?? "",
-                originCountry: viewModel.moviesDetails?.productionCountries.first?.name ?? "", buttonTitle: "Watch")
+                originCountry: viewModel.moviesDetails?.productionCountries.first?.name ?? "",
+                buttonTitle: "Watch",
+                languageTitle: "Language"
+            )
         }
     }
 }

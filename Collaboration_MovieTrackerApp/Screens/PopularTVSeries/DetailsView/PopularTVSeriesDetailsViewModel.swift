@@ -10,11 +10,12 @@ import GenericNetworkManager
 
 class PopularTVSeriesDetailsViewModel: ObservableObject {
     
+    //MARK: - Properties
     private var networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org")
     @Published var showDetails: TVShowDetails?
     
+    //MARK: - Methods
     func fetchDetails(id: Int) {
-        print(id)
         let endpoint = "/3/tv/\(id)?api_key=fc0c012be098a15452a64aa9c7fa252b"
         
         networkManager.fetchData(endpoint: endpoint) { (result: Result<TVShowDetails, Error>) in
@@ -29,7 +30,6 @@ class PopularTVSeriesDetailsViewModel: ObservableObject {
         }
     }
     
-    
     func  generateImageURL(for profilePath: String?) -> String {
         guard let profilePath = profilePath else { return "" }
         
@@ -38,6 +38,5 @@ class PopularTVSeriesDetailsViewModel: ObservableObject {
         
         return baseImageURL + imageSize + profilePath
     }
-    
 }
 

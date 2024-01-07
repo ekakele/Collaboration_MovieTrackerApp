@@ -10,14 +10,16 @@ import GenericNetworkManager
 
 class PopularTVSeriesViewModel: ObservableObject {
     
+    //MARK: - Properties
     @Published var tvShows: [TVShow] = []
     private var networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org")
     
+    //MARK: - init
     init() {
         fetchTVShows()
     }
-
     
+    //MARK: - Methods
     func fetchTVShows() {
         networkManager.fetchData(endpoint: "/3/tv/popular?api_key=fc0c012be098a15452a64aa9c7fa252b") { (result: Result<TVShowList, Error>) in
             switch result {

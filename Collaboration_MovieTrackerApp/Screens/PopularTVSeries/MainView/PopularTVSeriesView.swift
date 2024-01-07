@@ -9,11 +9,12 @@ import SwiftUI
 import GenericNetworkManager
 
 struct PopularTVSeriesView: View {
+    
+    //MARK: - Properties
     @StateObject var viewModel = PopularTVSeriesViewModel()
-  //  @State private var showingDetails = false
-  //  @State private var id: Int?
     @State private var showDetailsPage: [Int: Bool] = [:]
     
+    //MARK: - Body
     var body: some View {
         ZStack{
             fullInfoStackView
@@ -22,7 +23,7 @@ struct PopularTVSeriesView: View {
         .background(AppColor.background)
     }
     
-    
+    //MARK: - Components
     private var fullInfoStackView: some View {
         VStack(alignment: .leading){
             MainTitleView(title: "Popular TV series")
@@ -44,7 +45,6 @@ struct PopularTVSeriesView: View {
             .listRowBackground(Color.clear)
             .onTapGesture {
                 showDetailsPage[tvShow.id, default: false].toggle()
-              //  id = tvShow.id
             }
             .sheet(isPresented: Binding(
                 get: { showDetailsPage[tvShow.id, default: false] },

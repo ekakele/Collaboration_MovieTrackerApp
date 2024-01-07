@@ -40,7 +40,7 @@ struct TVShow: Decodable, Identifiable {
     }
 }
 
-enum Genre: Int, Codable {
+enum Genre: Int, Decodable {
     case action = 28
     case adventure = 12
     case animation = 16

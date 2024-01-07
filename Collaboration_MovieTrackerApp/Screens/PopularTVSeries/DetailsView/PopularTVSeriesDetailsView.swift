@@ -9,12 +9,16 @@ import SwiftUI
 
 struct PopularTVSeriesDetailsView: View {
     
+    //MARK: - Properties
     @StateObject var viewModel = PopularTVSeriesDetailsViewModel()
     @State var id: Int
     
     // MARK: - Body
     var body: some View {
-        ZStack{
+        ZStack {
+            AppColor.background
+                .ignoresSafeArea()
+            
             if let TVShow = viewModel.showDetails {
                 setupDetailsView(for: TVShow)
             } else {
@@ -25,8 +29,6 @@ struct PopularTVSeriesDetailsView: View {
                     }
             }
         }
-        .background(AppColor.background)
-        .ignoresSafeArea()
     }
     
     // MARK: - Components

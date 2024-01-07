@@ -11,9 +11,6 @@ struct PopularPersonsDetailsView: View {
     // MARK: - Properties
     @StateObject var viewModel = PopularPersonsDetailsViewModel()
     @State var personID: Int
-    @State var biography = ""
-    @State var name = ""
-    @State var image = ""
     
     // MARK: - Body
     var body: some View {

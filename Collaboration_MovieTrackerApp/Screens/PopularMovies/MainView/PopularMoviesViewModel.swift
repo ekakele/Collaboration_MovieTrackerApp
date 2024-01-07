@@ -34,8 +34,8 @@ class PopularMoviesViewModel: ObservableObject {
                }
         }
     
-    func generateImageURL(for imagePath: String?) -> String? {
-            guard let imagePath = imagePath else { return nil }
+    func generateImageURL(for imagePath: String?) -> String {
+            guard let imagePath = imagePath else { return "" }
             
             let baseImageURL = "https://image.tmdb.org/t/p/"
             let imageSize = "original"

@@ -8,11 +8,43 @@
 import SwiftUI
 
 struct PopularMoviesDetailsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+   
+    @StateObject var viewModel: PopularMoviesDetailsViewModel
+    
+    init(movie: Movie) {
+        self._viewModel = StateObject(wrappedValue: PopularMoviesDetailsViewModel(movie: movie))
     }
+    
+    var body: some View {
+        ZStack() {
+            AppColor.background
+                .ignoresSafeArea()
+            VStack {
+//                DetailsView(
+//                    image: viewModel.generateImageURL(for: viewModel.moviesDetails?.posterPath),
+//                            title: viewModel.moviesDetails?.title ?? "",
+//                            genre: viewModel.moviesDetails?.genres.first?.name ?? "",
+//                            imdb: "IMDB",
+//                    imdbRating: String(format: "%.1f", viewModel.moviesDetails?.voteAverage ?? 0.0),
+//                            shortInfo: viewModel.moviesDetails?.overview ?? "",
+//                            language: viewModel.moviesDetails?.originalLanguage ?? "",
+//                            originCountry: "")
+                
+                
+            }
+            .onAppear(perform: {
+                viewModel.fetchData()
+            })
+        
+        }
+    }
+    
+    
 }
+ 
 
 #Preview {
-    PopularMoviesDetailsView()
+    PopularMoviesDetailsView(movie: Movie(id: 1, image: "vdfa", title: "vdfa", shortInfo: "dcfd", genre: [], imdbRating: 2.0))
 }
+
+

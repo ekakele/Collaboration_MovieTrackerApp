@@ -9,14 +9,20 @@ import SwiftUI
 
 struct PopularTVSeriesDetailsView: View {
     @StateObject var viewModel = PopularTVSeriesDetailsViewModel()
+    @State var id: Int
     
     var body: some View {
-        VStack{
-            Text("hello")
+        if let showDetails = viewModel.showDetails {
+            VStack{
+                Text(String(id))
+            }
+            .onAppear {
+                viewModel.fetchDetails(id: id)
+            }
         }
     }
 }
-
-#Preview {
-    PopularTVSeriesDetailsView()
-}
+    
+    #Preview {
+        PopularTVSeriesDetailsView( id: 12513)
+    }

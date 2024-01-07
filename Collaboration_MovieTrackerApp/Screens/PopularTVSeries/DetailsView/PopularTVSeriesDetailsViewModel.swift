@@ -13,14 +13,9 @@ class PopularTVSeriesDetailsViewModel: ObservableObject {
     private var networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org")
     @Published var showDetails: TVShowDetails?
     
-    init() {
-        fetchDetails()
-    }
-    
-    func fetchDetails() {
+    func fetchDetails(id: Int) {
         
-        let id = Int()
-        let endpoint = "3/tv/\(id)?api_key=fc0c012be098a15452a64aa9c7fa252b"
+        let endpoint = "/3/tv/\(id)?api_key=fc0c012be098a15452a64aa9c7fa252b"
         
         networkManager.fetchData(endpoint: endpoint) { (result: Result<TVShowDetails, Error>) in
             switch result {

@@ -31,8 +31,8 @@ class PopularTVSeriesViewModel: ObservableObject {
         }
     }
     
-    func  generateImageURL(for profilePath: String?) -> String? {
-        guard let profilePath = profilePath else { return nil }
+    func  generateImageURL(for profilePath: String?) -> String {
+        guard let profilePath = profilePath else { return "" }
         
         let baseImageURL = "https://image.tmdb.org/t/p/"
         let imageSize = "original"

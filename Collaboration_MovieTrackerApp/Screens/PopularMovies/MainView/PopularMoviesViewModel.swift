@@ -22,7 +22,7 @@ final class PopularMoviesViewModel: ObservableObject {
     //MARK: - Methods
     func fetchData() {
         let endpointString = "3/movie/popular?api_key=44eb1481b98d9c5e2d312757977b5c5a"
-        networkManager.fetchData(endpoint: endpointString) { (result: Result<Response, Error>) in
+        networkManager.fetchData(endpoint: endpointString) { (result: Result<PopularMoviesResponse, Error>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

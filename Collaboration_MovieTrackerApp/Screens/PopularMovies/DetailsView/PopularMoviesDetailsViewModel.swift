@@ -9,18 +9,18 @@ import Foundation
 import GenericNetworkManager
 
 class PopularMoviesDetailsViewModel: ObservableObject {
-    
+    //MARK: - Properties
     private var networkManager: GenericNetworkManager
     @Published var moviesDetails: MoviesDetails?
     var selectedMovie: Movie
     
-    
+    //MARK: - Init
     init(movie: Movie) {
         self.networkManager = GenericNetworkManager(baseURL: "https://api.themoviedb.org/")
         self.selectedMovie = movie
-        
     }
     
+    //MARK: - Methods
     func fetchData() {
         let endpointString = "3/movie/\(selectedMovie.id)?api_key=5640b394ad4d380d373cddff07791a1c"
         networkManager.fetchData(endpoint: endpointString) { (result: Result<MoviesDetails, Error>) in
@@ -44,10 +44,3 @@ class PopularMoviesDetailsViewModel: ObservableObject {
         return baseImageURL + imageSize + imagePath
     }
 }
-
-
-//func fetchMovies(movieId: Int) {
-//    let urlString = "https://api.themoviedb.org/3/movie/\(movieId)?api_key=5640b394ad4d380d373cddff07791a1c"
-//    
-//    
-//}

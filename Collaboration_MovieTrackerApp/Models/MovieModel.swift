@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Codable {
+struct Movie: Decodable {
     let id: Int
     let image:  String
     let title: String
@@ -25,7 +25,7 @@ struct Movie: Codable {
     }
 }
 
-struct Response: Codable {
+struct Response: Decodable {
   let results: [Movie]
 }
 

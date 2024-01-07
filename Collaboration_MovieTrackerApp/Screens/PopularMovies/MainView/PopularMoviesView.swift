@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PopularMoviesView: View {
+    //MARK: - Properties
     @StateObject var viewModel = PopularMoviesViewModel()
     @State private var isShowingDetails = false
     @State private var selectedMovie: Movie?
-
-
+    
+    //MARK: - Body
     var body: some View {
         ZStack {
             AppColor.background
@@ -29,6 +30,7 @@ struct PopularMoviesView: View {
         }
     }
     
+    //MARK: - Components
     private var listView: some View {
         List {
             ForEach(viewModel.movies, id: \.id) { movie in
@@ -37,29 +39,27 @@ struct PopularMoviesView: View {
                             shortInfo: movie.shortInfo,
                             genre: movie.genre.first?.rawValue ?? "",
                             imdb: "IMDB",
-                            imdbRating: String(format: "%.1f", movie.imdbRating)
+                            imdbRating: String(format: "%.2f", movie.imdbRating)
                 )
                 .onTapGesture {
-                                  selectedMovie = movie
-                                  isShowingDetails = true
-                              }
+                    selectedMovie = movie
+                    isShowingDetails = true
+                }
             }
             .listRowBackground(Color.clear)
         }
         .padding(.vertical, 5)
         .listStyle(PlainListStyle())
-        
     }
     
     private var listTitleView: some View {
-            Text("Popular Persons")
-                .font(.title)
-                .bold()
-                .foregroundStyle(AppColor.textPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20)
-        }
-    
+        Text("Popular Persons")
+            .font(.title)
+            .bold()
+            .foregroundStyle(AppColor.textPrimary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 20)
+    }
 }
 
 #Preview {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MoviesInCinemaView: View {
     
+    //MARK: - Properties
     @StateObject private var viewModel = MoviesInCinemaViewModel()
     @State private var isMovieDetailViewActive = false
     @State private var showDetailsPage: [Int: Bool] = [:]
@@ -25,7 +26,6 @@ struct MoviesInCinemaView: View {
     private var listView: some View {
         
         VStack(alignment: .leading) {
-        
             MainTitleView(title: "Movies in cinema")
             
             ScrollView {
@@ -51,7 +51,6 @@ struct MoviesInCinemaView: View {
                             MoviesInCinemaDetailsView(movieID: movie.id)
                                 .presentationDetents([.fraction(0.99)])
                         }
-                        
                     }
                 }
                 .padding(.horizontal, 16)

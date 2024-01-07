@@ -8,7 +8,7 @@
 import Foundation
 import GenericNetworkManager
 
-class PopularPersonsViewModel: ObservableObject {
+final class PopularPersonsViewModel: ObservableObject {
     // MARK: - Properties
     private var networkManager: GenericNetworkManager
     @Published var persons: [Person] = []

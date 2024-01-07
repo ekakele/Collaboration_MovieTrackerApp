@@ -89,7 +89,7 @@ enum Genre: Int, Codable {
         if let genre = Genre(rawValue: id) {
             return genre.stringValue
         } else {
-            return "Unknown"
+            return "Comedy"
         }
     }
 }

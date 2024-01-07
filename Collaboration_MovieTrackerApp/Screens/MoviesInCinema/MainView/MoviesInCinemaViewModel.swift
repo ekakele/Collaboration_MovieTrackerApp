@@ -10,7 +10,7 @@ import GenericNetworkManager
 
 final class MoviesInCinemaViewModel: ObservableObject {
     //MARK: - Properties
-    @Published var results: [Movie] = []
+    @Published var results: [MovieInCinema] = []
     private var networkManager: GenericNetworkManager
     
     init() {

@@ -50,7 +50,7 @@ struct MoviesInCinemaView: View {
         .padding(.vertical, 5)
     }
     
-    private func setupListRowView(for movie: Movie) -> some View {
+    private func setupListRowView(for movie: MovieInCinema) -> some View {
         ListRowView(
             image: viewModel.generateImageURL(for: movie.posterPath),
             title: movie.title,

@@ -31,9 +31,6 @@ struct Review: Decodable {
         case url
         case authorDetails = "author_details"
     }
-    
-
-    
 }
 
 // MARK: - AuthorDetails

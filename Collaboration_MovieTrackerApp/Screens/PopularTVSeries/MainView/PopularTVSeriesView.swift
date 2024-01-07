@@ -10,8 +10,9 @@ import GenericNetworkManager
 
 struct PopularTVSeriesView: View {
     @StateObject var viewModel = PopularTVSeriesViewModel()
-    @State private var showingDetails = false
-    @State private var id: Int?
+  //  @State private var showingDetails = false
+  //  @State private var id: Int?
+    @State private var showDetailsPage: [Int: Bool] = [:]
     
     var body: some View {
         ZStack{
@@ -24,27 +25,11 @@ struct PopularTVSeriesView: View {
     
     private var fullInfoStackView: some View {
         VStack(alignment: .leading){
-            headlineView
+            MainTitleView(title: "Popular TV series")
             listView
         }
         .listStyle(.plain)
     }
-    
-    private var headlineView: some View {
-        HStack(spacing: 8) {
-            Rectangle()
-                .frame(width: 4, height: 32)
-                .foregroundColor(AppColor.primaryGreen)
-                .cornerRadius(2)
-            
-            Text("Popular TV series")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(AppColor.textPrimary)
-        }
-        .padding(.horizontal, 16)
-    }
-        
     
     private var listView: some View {
         List(viewModel.tvShows, id: \.id) { tvShow in
@@ -58,15 +43,20 @@ struct PopularTVSeriesView: View {
             )
             .listRowBackground(Color.clear)
             .onTapGesture {
-                showingDetails.toggle()
-                id = tvShow.id
+                showDetailsPage[tvShow.id, default: false].toggle()
+              //  id = tvShow.id
             }
-            .sheet(isPresented: $showingDetails) {
-                PopularTVSeriesDetailsView(id: id ?? 0)
+            .sheet(isPresented: Binding(
+                get: { showDetailsPage[tvShow.id, default: false] },
+                set: { showDetailsPage[tvShow.id] = $0 }
+            )) {
+                PopularTVSeriesDetailsView(id: tvShow.id)
+                    .presentationDetents([.fraction(0.99)])
             }
         }
     }
 }
+
 
 
 #Preview {

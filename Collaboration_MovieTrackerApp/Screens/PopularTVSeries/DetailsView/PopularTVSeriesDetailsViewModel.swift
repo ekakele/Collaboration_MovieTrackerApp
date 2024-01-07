@@ -14,7 +14,7 @@ class PopularTVSeriesDetailsViewModel: ObservableObject {
     @Published var showDetails: TVShowDetails?
     
     func fetchDetails(id: Int) {
-        
+        print(id)
         let endpoint = "/3/tv/\(id)?api_key=fc0c012be098a15452a64aa9c7fa252b"
         
         networkManager.fetchData(endpoint: endpoint) { (result: Result<TVShowDetails, Error>) in

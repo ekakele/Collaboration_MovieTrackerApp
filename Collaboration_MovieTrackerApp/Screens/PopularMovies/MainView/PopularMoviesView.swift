@@ -39,7 +39,7 @@ struct PopularMoviesView: View {
                             shortInfo: movie.shortInfo,
                             genre: movie.genre.first?.rawValue ?? "",
                             imdb: "IMDB",
-                            imdbRating: String(format: "%.2f", movie.imdbRating)
+                            imdbRating: String(format: "%.1f", movie.imdbRating)
                 )
                 .onTapGesture {
                     selectedMovie = movie
